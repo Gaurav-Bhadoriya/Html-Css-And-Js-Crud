@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="main-title">Employee</h1>
+    </header>
+    <div class="custom-border">
+      <h5 class="sub-heading">Add Employee</h5>
+      <div class="content-container">
+        <form
+          autocomplete="off"
+          id="employeeForm"
+          onsubmit="return validatedForm()"
+        >
+          <div class="row">
+            <div class="form-label">
+              <label class="input-label" for="employeeName">Name:</label>
+            </div>
+            <div class="form-input">
+              <input type="text" id="employeeName" />
+              <div>
+                <span class="error-msg" id="validateEmployeeName"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-label">
+              <label class="input-label" for="employeeGender">Gender:</label>
+            </div>
+            <div class="form-input">
+              <input
+                type="radio"
+                name="employeeGender"
+                id="maleGender"
+                value="Male"
+                checked
+              />Male
+              <input
+                type="radio"
+                name="employeeGender"
+                id="femaleGender"
+                value="Female"
+              />
+              Female
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-label">
+              <label class="input-label" for="employeeDob"
+                >Date of Birth:</label
+              >
+            </div>
+            <div class="form-input">
+              <input type="date" name="employeeDob" id="employeeDob" />
+              <div>
+                <span class="error-msg" id="validateEmployeeDob"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-label">
+              <label class="input-label" for="employeeEmail">Email:</label>
+            </div>
+            <div class="form-input">
+              <input type="text" id="employeeEmail" />
+              <div>
+                <span class="error-msg" id="validateEmployeeEmail"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-label">
+              <label class="input-label" for="employeePhone">Phone:</label>
+            </div>
+            <div class="form-input">
+              <input type="number" id="employeePhone" />
+              <div>
+                <span class="error-msg" id="validateEmployeePhone"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-label">
+              <label class="input-label" for="employeeHobbies">Hobbies:</label>
+            </div>
+            <div class="form-input">
+              <label class="check-label" for="hobbyCricket">
+                <input
+                  type="checkbox"
+                  value="Cricket"
+                  id="hobbyCricket"
+                  class="hobby"
+                />Cricket
+              </label>
+              <label class="check-label" for="hobbyChess">
+                <input
+                  type="checkbox"
+                  value="Chess"
+                  id="hobbyChess"
+                  class="hobby"
+                />
+                Chess
+              </label>
+              <label class="check-label" for="hobbyMusic">
+                <input
+                  type="checkbox"
+                  value="Music"
+                  id="hobbyMusic"
+                  class="hobby"
+                />
+                Music
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <input
+              type="submit"
+              class="button-input"
+              value="Submit"
+              id="submit"
+              onclick="addEmployee()"
+            />
+            <input
+              type="submit"
+              class="button-input"
+              value="update"
+              id="update"
+              onclick="editEmployee()"
+            />
+            <input
+              type="submit"
+              class="button-input"
+              value="cancel"
+              novalidate
+              onclick="resetForm()"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div>
+      <center>
+        <h2 class="section-title">Basic</h2>
+      </center>
+      <div class="custom-border table-container">
+        <h5 class="sub-heading">Display</h5>
+        <td>
+          <table id="employeeTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>DOB</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Hobbies</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </td>
+      </div>
+    </div>
+    <h1>
+      <center class="section-title">Advanced</center>
+    </h1>
+    <div class="custom-border table-container">
+      <h5 class="sub-heading">Display</h5>
+      <div class="container">
+        <table id="advancedTable">
+          <tr id="advancedemployeeName"></tr>
+          <tr id="advancedemployeeGender"></tr>
+          <tr id="advancedemployeeDob"></tr>
+          <tr id="advancedemployeeEmail"></tr>
+          <tr id="advancedemployeePhone"></tr>
+          <tr id="advancedemployeeHobbies"></tr>
+          <tr id="Actionfield"></tr>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
